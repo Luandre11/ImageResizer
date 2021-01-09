@@ -4,7 +4,7 @@ import os
 import json
 
 
-class Image_Resize():
+class Get_Image():
     def __init__(self):
         self.example = {"image": "test.png", "size_x": 100, "size_y": 100}
         self.path = "src\\"
@@ -35,11 +35,7 @@ class Image_Resize():
                     return image
             
             
-test = Image_Resize()
 
-test.create_folder1()
-test.save()
-print(test.get_image())
         
         
                 
