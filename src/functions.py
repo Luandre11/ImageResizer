@@ -34,8 +34,7 @@ class Get_Image():
             size_x = data["size_x"]
             if int(size_y) and int(size_x): 
                 return [size_y, size_x]
-            else:
-                print("the size_x and size_y must be int types")
+           
 
 
 
