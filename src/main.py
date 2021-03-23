@@ -22,7 +22,7 @@ def ModifyImage():
         PillowImage = Image.open(f"images/{imagen}")
         ImageResized = PillowImage.resize((size1, size2), resample = Image.ANTIALIAS)
         ImageResized.save(f"newImages/{NewName(imagen)}")
-        print("everything done")
+        print("everything's done")
      else:
         print("something went wrong")
 
