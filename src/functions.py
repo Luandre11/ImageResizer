@@ -6,35 +6,40 @@ import json
 
 class Get_Image():
     def __init__(self):
-        self.example = {"image": "test.png", "size_x": 100, "size_y": 100}
-        self.path = "src\\"
+        self.example = {"image": "test.png", "size_x": 500, "size_y": 500}
 
-        if os.path.isfile(f"src\\information.json"):
-            with open("src\\information.json", "r") as f:
+        if os.path.isfile(f"src/information.json"):
+            with open("src/information.json", "r") as f:
                 self.example = json.load(f)
     
     def save(self):
-       with open("src\\information.json", "w") as f:
+       with open("src/information.json", "w") as f:
            json.dump(self.example, f)
     
-    
-    def create_folder1(self): 
-        if os.path.isdir("images") == False:
-            try:
-               os.mkdir("images")   
-            except:
-                print("something went wrong while making the directory")
-
             
     def get_image(self):
-        with open("src\\information.json", "r") as f:
+        accepted = ["jpg", "png", "jpeg"]
+        with open("src/information.json", "r") as f:
             data = json.load(f)
             image = data["image"]
-            if image in os.listdir("images"):
-                if image.endswith(".png")  or image.endswith (".jpg"):
+            for i in accepted:
+                if image.endswith(i):
                     return image
-            
-            
+
+
+    def get_size(self):
+        with open("src/information.json", "r") as f:
+            data = json.load(f)
+            size_y = data["size_y"]
+            size_x = data["size_x"]
+            if int(size_y) and int(size_x): 
+                return [size_y, size_x]
+            else:
+                print("the size_x and size_y must be int types")
+
+
+
+
 
         
         
