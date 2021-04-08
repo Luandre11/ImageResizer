@@ -26,8 +26,8 @@ def ModifyImage():
      else:
         print("something went wrong")
 
-
-ModifyImage()
+if __name__ == "__main__":
+        ModifyImage()
 
 
 
